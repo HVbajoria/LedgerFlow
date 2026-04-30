@@ -1,0 +1,3 @@
+web: gunicorn ledgerflow.wsgi --workers 2 --bind 0.0.0.0:$PORT
+worker: celery -A ledgerflow worker --loglevel=info --pool=solo
+beat: celery -A ledgerflow beat --loglevel=info
